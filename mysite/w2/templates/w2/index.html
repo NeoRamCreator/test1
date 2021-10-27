@@ -1,0 +1,25 @@
+{% extends 'w2/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            {% block queryset %}
+                {% include 'w2/queryset.html' %}
+            {% endblock queryset %}
+        </div>
+
+
+        <div class="col-md-6">
+            {% block form %}
+                {% include 'w2/form.html' %}
+            {% endblock form %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}
