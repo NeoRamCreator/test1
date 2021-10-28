@@ -7,8 +7,6 @@ urlpatterns = [
     # path('', PersonListenView.as_view(), name='list_person'),
     path('', All.as_view(), name='list_person'),
 
-
-
     # path('person/<int:pk>/', PersonCreateView.as_view(), name='people-detail'),
 
 ]
