@@ -10,14 +10,17 @@ def index(request):
 
 
 class PersonCreateView(CreateView):
-    models = CreatePerson
-    template_name = 'w2/index.html'
+    # models = CreatePerson
 
+
+    template_name = 'w2/index.html'
+    form_class = CreatePerson
 
 
 class PersonListenView(ListView):
     model = Person
     template_name = 'w2/index.html'
+
 
 # class All(CreateView, ListView):
 #     model = Person
