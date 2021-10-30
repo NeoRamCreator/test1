@@ -11,5 +11,5 @@ class CreatePerson(ModelForm):
         fields = ['title', 'text', 'img']
 
         widgets = {
-            'text': Textarea(attrs={'cols': 20, 'rows': 20}),
+            'text': Textarea(attrs={'cols': 30, 'rows': 5}),
         }
