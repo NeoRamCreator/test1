@@ -1,54 +1,29 @@
-<div class="">
+{% for item in object_list %}
 
-    {% for item in object_list %}
+<div class="col-sm-6 item">
     <div class="row">
 
+
         {% if item.img %}
-        <div>
-            <a href="#">
-                <img src="{{item.img.url}}" width="200"/>
-            </a>
+        <div class="col-md-12 col-lg-5">
+            <a href="#"><img class="img-fluid" src="{{item.img.url}}" width="200"></a>
         </div>
         {% else %}
-        <div>
-            <a href="#">
-                <img width="100"
-                     src="data:image/jpeg;base64,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"/>
-            </a>
+        <div class="col-md-12 col-lg-5">
+            <a href="#"><img class="img-fluid" src="http://tumen.qlaster.ru/img/tovars_img8.png" width="200"></a>
         </div>
         {% endif %}
-        <div>
-            <h1>{{ item.title }}</h1>
-            <br>
-            <p>{{ item.text }}</p>
+
+
+        <div class="col">
+            <h3 class="name">{{ item.title }}</h3>
+            <p class="description">{{ item.text }}</p>
         </div>
-
-
-        <div class="row projects">
-            <div class="col-sm-6 item">
-                <div class="row">
-                    <div class="col-md-12 col-lg-5"><a href="#">
-                        {% if item.img %}
-                        <img class="img-fluid" src="{{item.img.url}}" width="200"></a>
-                    </div>
-                    {% else %}
-                    <img class="img-fluid" width="100"
-                         src="data:image/jpeg;base64,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"></a>
-
-                    <div class="col">
-                        <h3 class="name">Project Name</h3>
-                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus.
-                            Praesent aliquam in tellus eu gravida.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <br>
     </div>
+</div>
+
+{% endfor %}
 
 
-</div>
-</div>
 
 

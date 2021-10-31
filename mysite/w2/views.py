@@ -6,13 +6,12 @@ from .models import *
 
 
 def index(request):
+
+
     return render(request, 'w2/index.html', {})
 
 
 class PersonCreateView(CreateView):
-    # models = CreatePerson
-
-
     template_name = 'w2/index.html'
     form_class = CreatePerson
 
