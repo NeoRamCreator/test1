@@ -5,7 +5,7 @@ urlpatterns = [
     # path('', index, name='index'),
     path('', PersonCreateView.as_view(), name='create_person'),
 
-    path('', PersonListenView.as_view(), name='list_person'),
+    path('list/', PersonListenView.as_view(), name='list_person'),
 
     # path('', All.as_view(), name='list_person'),
 

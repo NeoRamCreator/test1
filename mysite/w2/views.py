@@ -23,6 +23,7 @@ class PersonCreateView(CreateView):
 
 class PersonListenView(ListView):
     model = Person
+    context_object_name = 'press'
     template_name = 'w2/index.html'
 
 
