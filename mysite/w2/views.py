@@ -21,12 +21,35 @@ class PersonCreateView(CreateView):
         return context
 
 
+class PersonCreateViewForm(CreateView):
+    template_name = 'w2/form1.html'
+    form_class = CreatePerson
+    success_url = reverse_lazy('create_person_home')
+
+
 class PersonListenView(ListView):
     model = Person
     context_object_name = 'press'
     template_name = 'w2/_queryset.html'
 
+
+class AuthorUpdateView(UpdateView):
+    model = Person
+    fields = ['name']
+
+
+
+
+
+
+
+
+
+
+
 # class All(CreateView, ListView):
 #     model = Person
 #     template_name = 'w2/index.html'
 #     form_class = CreatePerson
+
+

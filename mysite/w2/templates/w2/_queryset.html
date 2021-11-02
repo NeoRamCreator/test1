@@ -6,7 +6,7 @@
 
         {% if item.img %}
         <div class="col-md-12 col-lg-5">
-            <a href="#"><img class="img-fluid" src="{{item.img.url}}"  ></a>
+            <a href="#"><img class="img-fluid" src="{{item.img.url}}"></a>
         </div>
         {% else %}
         <div class="col-md-12 col-lg-5">
@@ -18,8 +18,14 @@
         <div class="col">
             <h3 class="name">{{ item.title }}</h3>
             <p class="description">{{ item.text }}</p>
+            <div>
+                <button>Редактировать</button>
+            </div>
         </div>
+
     </div>
+
+
 </div>
 <br>
 {% endfor %}
