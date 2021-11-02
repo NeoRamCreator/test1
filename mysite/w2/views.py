@@ -6,8 +6,6 @@ from .models import *
 
 
 def index(request):
-
-
     return render(request, 'w2/index.html', {})
 
 
@@ -24,10 +22,7 @@ class PersonCreateView(CreateView):
 class PersonListenView(ListView):
     model = Person
     context_object_name = 'press'
-    template_name = 'w2/index.html'
-
-
-
+    template_name = 'w2/_queryset.html'
 
 # class All(CreateView, ListView):
 #     model = Person
