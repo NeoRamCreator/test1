@@ -1,5 +1,55 @@
-<form  method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Загрузка</button>
-</form>
+<!--<form method="POST" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--    &lt;!&ndash;    {{ form.title }}&ndash;&gt;-->
+
+<!--    <button type="submit">Загрузка</button>-->
+<!--</form>-->
+
+
+<!--<form method="post">-->
+<!--    <h2 class="visually-hidden">Login Form</h2>-->
+<!--    <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>-->
+<!--    <div class="mb-3"><input type="text" class="form-control" name="email" placeholder="Имя"/></div>-->
+<!--    <div class="mb-3"><input type="password" class="form-control" name="password" placeholder="Описание"/></div>-->
+<!--    <div class="mb-3">-->
+<!--        <button class="btn btn-primary d-block w-100" type="submit">Загрузка</button>-->
+<!--    </div>-->
+<!--    <a class="forgot" href="#">Forgot your email or password?</a>-->
+<!--</form>-->
+
+<div class="login-box">
+    <h2>Создание объекта</h2>
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <div class="user-box">
+<!--            <input type="text" name="" required="" placeholder="Имя">-->
+<!--            <label></label>-->
+            <div>{{ form.title }}</div>
+        </div>
+
+        <div class="user-box">
+<!--            <input type="text" name="" required="" placeholder="Текст">-->
+<!--            <label></label>-->
+            <div>{{ form.text }}</div>
+        </div>
+
+
+        <div >
+            <a href="">
+                {{ form.img }}
+            </a>
+        </div>
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <button type="submit" class="t1"><h4>Создать</h4></button>
+
+        </a>
+    </form>
+</div>
