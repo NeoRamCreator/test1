@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'w2.apps.W2Config',
-    'w2.apps.Test1Config',
+    'test1.apps.Test1Config',
 ]
 
 MIDDLEWARE = [
