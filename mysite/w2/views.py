@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 
 from .forms import CreatePerson
@@ -12,6 +13,7 @@ def index(request):
 class PersonCreateView(CreateView):
     template_name = 'w2/index.html'
     form_class = CreatePerson
+    success_url = reverse_lazy('create_person_home')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
