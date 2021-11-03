@@ -1,6 +1,6 @@
 {% for item in press %}
 
-<div class="col-sm-9 item" style="border:3px #00B344  solid;">
+<div class="col-sm-11 item" style="border:3px #00B344  solid;">
     <div class="row">
 
 
@@ -10,7 +10,7 @@
         </div>
         {% else %}
         <div class="col-md-12 col-lg-5">
-            <a href="#"><img class="img-fluid" src="http://tumen.qlaster.ru/img/tovars_img8.png" width="100"></a>
+            <a href="#"><img class="img-fluid" src="http://tumen.qlaster.ru/img/tovars_img8.png" width="200"></a>
         </div>
         {% endif %}
 
@@ -18,7 +18,9 @@
         <div class="col">
             <h3 class="name">{{ item.title }}</h3>
             <p class="description">{{ item.text }}</p>
-
+            <div>
+                <a href="{% url 'update' item.pk %}">Редактировать</a>
+            </div>
         </div>
 
     </div>

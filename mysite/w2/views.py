@@ -33,12 +33,18 @@ class PersonListenView(ListView):
     template_name = 'w2/_queryset.html'
 
 
+# class PersonUpdateView(UpdateView):
+#     model = Person
+#     fields = ['title', 'text', 'img']
+#     template_name = 'w2/form1.html'
+#     success_url = reverse_lazy('create_person_home')
+#     form_class = CreatePerson
+
 class PersonUpdateView(UpdateView):
     model = Person
-    fields = ['title', 'text', 'img']
     template_name = 'w2/form1.html'
-    success_url = reverse_lazy('create_person_home')
     form_class = CreatePerson
+    success_url = reverse_lazy('create_person_home')
 
 
 
