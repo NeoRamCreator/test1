@@ -14,6 +14,11 @@ class CreatePerson(ModelForm):
         # }
 
         widgets = {
-            'text': TextInput(attrs={'class': 't2'}),
+            'text': Textarea(attrs={
+                'class': 't2',
+                'cols': 28,
+                'rows': 5,
+
+            }),
         }
 

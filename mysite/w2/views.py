@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 
 from .forms import CreatePerson
 from .models import *
@@ -33,9 +33,12 @@ class PersonListenView(ListView):
     template_name = 'w2/_queryset.html'
 
 
-class AuthorUpdateView(UpdateView):
+class PersonUpdateView(UpdateView):
     model = Person
-    fields = ['name']
+    fields = ['title', 'text', 'img']
+    template_name = 'w2/form1.html'
+    success_url = reverse_lazy('create_person_home')
+    form_class = CreatePerson
 
 
 

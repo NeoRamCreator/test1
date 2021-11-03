@@ -24,23 +24,23 @@
 
         {% csrf_token %}
 
-        <div class="user-box">
-<!--            <input type="text" name="" required="" placeholder="Имя">-->
-<!--            <label></label>-->
-            <div>{{ form.title }}</div>
-        </div>
+<!--        <div class="user-box">-->
+<!--            <div>{{ form.title }}</div>-->
+<!--        </div>-->
+
+        <div>{{ form.title }}</div>
 
         <div class="user-box">
-<!--            <input type="text" name="" required="" placeholder="Текст">-->
-<!--            <label></label>-->
+            <!--            <input type="text" name="" required="" placeholder="Текст">-->
+            <!--            <label></label>-->
             <div>{{ form.text }}</div>
         </div>
 
 
-        <div >
-            <a href="">
-                {{ form.img }}
-            </a>
+        <div>
+
+            {{ form.img }}
+
         </div>
         <a href="#">
             <span></span>
