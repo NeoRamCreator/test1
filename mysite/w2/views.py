@@ -10,6 +10,10 @@ def index(request):
     return render(request, 'w2/index.html', {})
 
 
+def mod_form(request):
+    return render(request, 'w2/_mod_window.html', {})
+
+
 class PersonCreateView(CreateView):
     template_name = 'w2/index.html'
     form_class = CreatePerson
@@ -46,19 +50,7 @@ class PersonUpdateView(UpdateView):
     form_class = CreatePerson
     success_url = reverse_lazy('create_person_home')
 
-
-
-
-
-
-
-
-
-
-
 # class All(CreateView, ListView):
 #     model = Person
 #     template_name = 'w2/index.html'
 #     form_class = CreatePerson
-
-

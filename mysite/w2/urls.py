@@ -3,6 +3,7 @@ from .views import *
 
 urlpatterns = [
     # path('', index, name='index'),
+    # path('mod_form', mod_form, name='mod_form'),
 
     path('', PersonCreateView.as_view(), name='create_person_home'),
     path('form/', PersonCreateViewForm.as_view(), name='form'),
