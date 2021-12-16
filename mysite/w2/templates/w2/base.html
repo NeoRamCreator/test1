@@ -15,41 +15,13 @@
 </head>
 <body>
 
+{% block 'NAVBAR_1' %}
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <a class="navbar-brand" href="#">Navbar</a>
 
-
-            <!--            <button data-toggle="modal" data-target="#modal_form">Добавить</button>-->
-
-
-            <!--            <div class="modal fade" id="modal_form" tabindex="-1" aria-hidden="true">-->
-            <!--                <div class="login-box">-->
-            <!--                    <h2>Создание объекта</h2>-->
-            <!--                    <form method="POST" enctype="multipart/form-data">-->
-            <!--                        {% csrf_token %}-->
-            <!--                        <div>{{ form.title }}</div>-->
-            <!--                        <br>-->
-            <!--                        <div class="user-box">-->
-            <!--                            <div>{{ form.text }}</div>-->
-            <!--                        </div>-->
-            <!--                        <div>-->
-            <!--                            {{ form.img }}-->
-            <!--                        </div>-->
-            <!--                        <a href="#">-->
-            <!--                            <span></span>-->
-            <!--                            <span></span>-->
-            <!--                            <span></span>-->
-            <!--                            <span></span>-->
-
-            <!--                            <button type="submit" class="t1"><h4>Создать</h4></button>-->
-
-            <!--                        </a>-->
-            <!--                    </form>-->
-            <!--                </div>-->
-            <!--            </div>-->
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -70,28 +42,22 @@
                 </div>
             </div>
 
-
             <a class="navbar-brand" href="{% url 'form' %}">Добавить</a>
+
         </div>
     </nav>
 </div>
+{% endblock 'NAVBAR_1' %}
+
+
+{% block 'NAVBAR_filter' %}
+{% endblock 'NAVBAR_filter' %}
+
+{% block 'NAVBAR_search' %}
+{% endblock 'NAVBAR_search' %}
 
 
 {% block content %}
-
-
-{% block queryset %}
-{% for item in object_list %}
-{{ item }}
-{% endfor %}
-{% endblock queryset %}
-
-
-{% block form %}
-
-{% endblock form %}
-
-
 {% endblock content %}
 
 

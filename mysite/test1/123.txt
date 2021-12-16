@@ -1,0 +1,5 @@
+остановка на
+views.py
+    9-16
+list_view.html
+    35-38

@@ -1,4 +1,4 @@
-{% for item in press %}
+{% for item in object_list %}
 
 <div class="col-sm-11 item" style="border:3px #00B344  solid;">
     <div class="row">
@@ -16,8 +16,10 @@
 
 
         <div class="col">
-            <h3 class="name">{{ item.title }}</h3>
-            <p class="description">{{ item.text }}</p>
+            <h3 class="name">title: {{ item.title }}</h3><br>
+            <p>price: {{ item.price }}</p>
+            <p>id: {{ item.pk }}</p>
+            <p class="description">text: {{ item.text }}</p>
             <div>
                 <a href="{% url 'update' item.pk %}">Редактировать</a>
             </div>
@@ -29,6 +31,10 @@
 </div>
 <br>
 {% endfor %}
+
+<form action="{% url 'create_person_home' %}" method="get">
+    <input name="q" type="text" placeholder="Search...">
+</form>
 
 
 

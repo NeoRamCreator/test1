@@ -1,5 +1,7 @@
 {% extends 'w2/base.html' %}
 
+
+
 {% block 'NAVBAR_filter' %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -15,6 +17,7 @@
             <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
 
             <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+
 
             <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -32,7 +35,7 @@
                 <a class="nav-link" href="#">
                     <form class="form-inline" action="{% url 'filter_price' %}" method="get">
                         {% csrf_token %}
-                        <button class="btn btn-outline-success my-2 my-sm-0" name='title' value="title" type="submit">По
+                        <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">По
                             цене
                         </button>
                     </form>
@@ -97,12 +100,6 @@
                 {% endblock queryset %}
             </div>
 
-
-            <div class="col-md-4">
-                {% block form %}
-                {% include 'w2/_form.html' %}
-                {% endblock form %}
-            </div>
 
 
         </div>
