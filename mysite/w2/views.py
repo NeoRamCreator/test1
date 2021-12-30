@@ -1,14 +1,73 @@
+from django.contrib import messages
+from django.contrib.auth import login, authenticate, logout
 from django.core.mail import message
 from django.db.models import Q
 from django.http import HttpResponseRedirect, request
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView
 
-from .forms import CreatePerson
+from .forms import CreatePerson, CreateUserForm
 from .models import *
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
+from django.contrib.auth.forms import AuthenticationForm
+
+
+def loginPage(request):
+    context = {}
+    return render(request, 'w2/auth/login.html', context)
+
+
+def registerPage(request):
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('create_person_home')
+    else:
+        form = CreateUserForm()
+    return render(request, 'w2/auth/register.html', {'form': form})
+
+
+def error(request):
+    return render(request, 'w2/error.html', {})
+
+
+# def registerPage(request):
+#     form = CreateUserForm()
+#     if request.method == 'POST':
+#         form = CreateUserForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             user = form.cleaned_data.get('username')
+#             messages.success(request, 'Success! Add user: ' + user)
+#             return redirect('login')
+#         else:
+#             messages.error(request, 'error! Add NOT user: ')
+#     else:
+#         form = CreateUserForm()
+#     context = {'form': form}
+#     return render(request, 'w2/auth/register.html', context)
+
+#
+# def registerPage(request):
+#     if request.user.is_authenticated:
+#         return redirect('create_person_home')
+#     else:
+#         form = CreateUserForm()
+#         if request.method == 'POST':
+#             form = CreateUserForm(request.POST)
+#             if form.is_valid():
+#                 form.save()
+#                 user = form.cleaned_data.get('username')
+#                 messages.success(request, 'Success! Add user: ' + user)
+#                 return redirect('login')
+#     context = {'form': form}
+#     return render(request, 'w2/auth/register.html', context)
+#
 
 class Search(ListView):
     template_name = 'w2/search.html'
