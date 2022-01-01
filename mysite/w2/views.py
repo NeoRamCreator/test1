@@ -25,7 +25,7 @@ def loginPage(request):
         if user is not None:
             login(request, user)
             return redirect('create_person_home')
-    context = {'form': form,}
+    context = {'form': form, }
     return render(request, 'w2/auth/login.html', context)
 
 
@@ -34,7 +34,7 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('create_person_home')
+            return redirect('login')
     else:
         form = CreateUserForm()
     return render(request, 'w2/auth/register.html', {'form': form})
