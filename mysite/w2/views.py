@@ -36,6 +36,11 @@ def error(request):
     return render(request, 'w2/error.html', {})
 
 
+def logoutUser(request):
+    logout(request)
+    return redirect('error')
+
+
 # def registerPage(request):
 #     form = CreateUserForm()
 #     if request.method == 'POST':
