@@ -2,8 +2,14 @@ from django import forms
 from django.forms import ModelForm, Textarea, TextInput
 
 from .models import Person
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+
+
+class LogineUserForm(AuthenticationForm):
+    class Mete:
+        model = User
+        fields = ['username', 'password']
 
 
 class CreatePerson(ModelForm):

@@ -43,8 +43,10 @@
             </div>
 
             <a class="navbar-brand" href="{% url 'form' %}">Добавить</a>
+            <div>
+                <a class="navbar-brand" href="{% url 'logout' %}">{{request.user}} </a><a href="{% url 'logout' %}">Logout</a>
 
-            <a class="navbar-brand" href="#">{{request.user}}</a><a href="{% url 'logout' %}">Logout</a>
+            </div>
 
 
         </div>
